@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Socket name="Socket" host="127.0.0.1" port="4560">
+            <JsonLayout compact="true" eventEol="true" />
+            <SerializedLayout />
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %C{2} (%F:%L) %L- %msg%n" />
+        </Socket>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <!-- 输出格式  布局-->
+            <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>
+        </Console>
+        <File name="MyFile" fileName="F:/data/logs/log4j2test.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %C{2} (%F:%L) %L- %msg%n" />
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="all">
+            <AppenderRef ref="Socket"/>
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="MyFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

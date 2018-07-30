@@ -1,0 +1,33 @@
+//the config file for vert.x application.
+
+{
+  "redis": {
+    "host": "127.0.0.1",
+    "port": "6379"
+  },
+  "rabbitmq": {
+    "host":"127.0.0.1",
+    "port": "5672",
+    "user": "guest",
+    "password": "guest"
+  },
+  "threads": [
+    {
+      "threadId": "TC 001",
+      "consumeQueue": "SYS1/SUBSYS1/COMP1/001/1"
+      //"handler-name": "" // optional
+    },
+    {
+      "threadId": "TC 001",
+      "consumeQueue": "SYS1/SUBSYS1/COMP1/001/2"
+    },
+    {
+      "threadId": "TC 001",
+      "consumeQueue": "SYS1/SUBSYS1/COMP1/001/3"
+    },
+    {
+    "threadId": "TC 001",
+    "consumeQueue": "SYS1/SUBSYS1/COMP1/001/4"
+    }
+  ]
+}
